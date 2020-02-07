@@ -1,11 +1,22 @@
 <template>
-  <div>
+  <div class="index">
     <van-image
       :src="logoSrc"
       fill="cover"
       width="100%"
       height="200px">
     </van-image>
+    <van-tag
+      plain
+      class="source-tag"
+      @click="linkToSource">
+        <van-icon name="home-o" />
+        源码地址：https://github.com/shoppingzh/2019-ncov
+    </van-tag>
+    <van-row type="flex" justify="center" align="center">
+        <van-tag type="primary">疫情数据分析</van-tag>
+        <div class="container-x c-gray f10">{{ data.times }}</div>
+    </van-row>
     <div class="container-y">
       <van-row type="flex">
         <van-col span="6" class="summary">
@@ -30,23 +41,33 @@
         </van-col>
       </van-row>
     </div>
-    <div class="container-xy">
-      <div class="card">
-        <van-row type="flex">
-          <div class="container-xy c-blue">疫情地图</div>
-        </van-row>
-        <china-map
-          :data="this.data.list">
-        </china-map>
-      </div>
-      <div class="card">
-        <van-row type="flex">
-          <div class="container-xy c-blue">世界疫情地图</div>
-        </van-row>
-        <world-map :data="this.data.worldlist">
-        </world-map>
-      </div>
-    </div>
+    <van-tabs v-model="tabActive" scrollspy sticky>
+      <van-tab title="中国疫情" class="container-xy">
+        <div class="card">
+          <van-row type="flex">
+            <div class="container-xy c-blue">疫情地图</div>
+          </van-row>
+          <china-map
+            :data="data.list">
+          </china-map>
+        </div>
+        <div class="c-blue" style="margin-bottom: 8px;">各省份疫情数据</div>
+        <my-list :data="data.list">
+        </my-list>
+      </van-tab>
+      <van-tab title="世界疫情" class="container-xy">
+        <div class="card">
+          <van-row type="flex">
+            <div class="container-xy c-blue">世界疫情地图</div>
+          </van-row>
+          <world-map :data="this.data.worldlist">
+          </world-map>
+        </div>
+        <div class="c-blue" style="margin-bottom: 8px;">各国家疫情数据</div>
+        <my-list :data="data.worldlist">
+        </my-list>
+      </van-tab>
+    </van-tabs>
   </div>
 </template>
 
@@ -55,15 +76,18 @@ import logoSrc from '@/assets/logo.png'
 import jsonp from 'jsonp'
 import ChinaMap from '@/components/ChinaMap'
 import WorldMap from '@/components/WorldMap'
+import MyList from '@/components/MyList'
 
 export default {
   components: {
     ChinaMap,
-    WorldMap
+    WorldMap,
+    MyList
   },
   data () {
     return {
       data: {},
+      tabActive: 0,
       logoSrc: logoSrc
     }
   },
@@ -73,13 +97,20 @@ export default {
         this.data = data.data
       }
     })
+  },
+  methods: {
+    linkToSource () {
+      window.open('https://github.com/shoppingzh/2019-ncov')
+    }
   }
 }
 </script>
 
 <style scoped>
+  .index{ position: relative; }
   .card{ border-radius: 5px; margin-bottom: 15px; }
   .summary{ text-align: center; }
   .summary .add{ font-size: 12px; padding: 3px 0; opacity: .85; }
   .summary .label{ font-size: 12px;  color: #666; padding-top: 2px; }
+  .source-tag{ position: absolute; right: 2px; top: 170px;}
 </style>

@@ -2,9 +2,8 @@ html, body, #app{
   height: 100%;
 }
 
-#app{
+body {
   background-color: #f3f4f7;
-  overflow: auto;
 }
 
 .card{
@@ -36,3 +35,12 @@ html, body, #app{
 .c-blue{ color: #007aff; }
 .c-green{ color: #4cd964; }
 .c-red{ color: #ff3b30; }
+
+/* 字体大小 */
+.f8{ font-size: 8px; }
+.f10{ font-size: 10px; }
+.f12{ font-size: 12px;}
+.f14{ font-size: 14px;}
+.f16{ font-size: 16px; }
+.f18{ font-size: 18px; }
+.f20{ font-size: 20px; }
