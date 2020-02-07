@@ -1,6 +1,13 @@
 # 2019-ncov
 2019武汉肺炎数据分析
 
+## client
+### 安装与使用
+```
+npm install
+npm run serve
+```
+
 
 ## server
 基于spring boot的服务端，提供了获取疫情数据的API，支持CORS跨域访问。
