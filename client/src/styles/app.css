@@ -1,0 +1,38 @@
+html, body, #app{
+  height: 100%;
+}
+
+#app{
+  background-color: #f3f4f7;
+}
+
+.card{
+  background-color: #fff;
+}
+
+.container-x{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.container-y{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.container-xy{
+  padding: 10px;
+}
+
+/* 颜色集合：使用framework7的颜色集合 */
+
+.c-gray{ color: #8e8e93; }
+.c-white{ color: #ffffff; }
+.c-black{ color: #000000; }
+.c-lightblue{ color: #5ac8fa; }
+.c-yellow{ color: #ffcc00; }
+.c-orange{ color: #ff9500; }
+.c-pink{ color: #ff2d55; }
+.c-blue{ color: #007aff; }
+.c-green{ color: #4cd964; }
+.c-red{ color: #ff3b30; }
