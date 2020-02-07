@@ -4,6 +4,7 @@ html, body, #app{
 
 #app{
   background-color: #f3f4f7;
+  overflow: auto;
 }
 
 .card{
@@ -25,7 +26,6 @@ html, body, #app{
 }
 
 /* 颜色集合：使用framework7的颜色集合 */
-
 .c-gray{ color: #8e8e93; }
 .c-white{ color: #ffffff; }
 .c-black{ color: #000000; }
