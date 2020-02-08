@@ -20,22 +20,22 @@
     <div class="container-y">
       <van-row type="flex">
         <van-col span="6" class="summary">
-          <div v-if="data.add_daily" class="c-red add">+{{data.add_daily.addcon}}</div>
+          <div v-if="data.add_daily" class="c-red add animated fadeInUp delay-1s">+{{data.add_daily.addcon}}</div>
           <div class="c-red">{{ data.gntotal || '-' }}</div>
           <div class="label">确诊</div>
         </van-col>
         <van-col span="6" class="summary">
-          <div v-if="data.add_daily" class="c-orange add">+{{data.add_daily.addsus}}</div>
+          <div v-if="data.add_daily" class="c-orange add animated fadeInUp delay-1s">+{{data.add_daily.addsus}}</div>
           <div class="c-orange">{{ data.sustotal || '-' }}</div>
           <div class="label">疑似</div>
         </van-col>
         <van-col span="6" class="summary">
-          <div v-if="data.add_daily" class="c-gray add">+{{data.add_daily.adddeath}}</div>
+          <div v-if="data.add_daily" class="c-gray add animated fadeInUp delay-1s">+{{data.add_daily.adddeath}}</div>
           <div class="c-gray">{{ data.deathtotal || '-' }}</div>
           <div class="label">死亡</div>
         </van-col>
         <van-col span="6" class="summary">
-          <div v-if="data.add_daily" class="c-green add">+{{data.add_daily.addcure}}</div>
+          <div v-if="data.add_daily" class="c-green add animated fadeInUp delay-1s">+{{data.add_daily.addcure}}</div>
           <div class="c-green">{{ data.curetotal || '-' }}</div>
           <div class="label">治愈</div>
         </van-col>
