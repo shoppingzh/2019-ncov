@@ -6,8 +6,8 @@
           {{ isChina ? '省份' : '国家'}}
         </van-col>
         <van-col span="6" class="list__label">确诊</van-col>
-        <van-col span="6" class="list__label">治愈</van-col>
         <van-col span="6" class="list__label">死亡</van-col>
+        <van-col span="6" class="list__label">治愈</van-col>
       </van-row>
     </div>
     <div class="list__body">
