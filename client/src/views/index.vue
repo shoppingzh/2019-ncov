@@ -51,6 +51,11 @@
             :data="data.list">
           </china-map>
         </div>
+        <div class="card">
+          <div class="container-xy c-blue">疫情发展趋势</div>
+          <my-line :data="data.historylist">
+          </my-line>
+        </div>
         <div class="c-blue" style="margin-bottom: 8px;">各省份疫情数据</div>
         <my-list :data="data.list">
         </my-list>
@@ -77,12 +82,14 @@ import jsonp from 'jsonp'
 import ChinaMap from '@/components/ChinaMap'
 import WorldMap from '@/components/WorldMap'
 import MyList from '@/components/MyList'
+import MyLine from '@/components/MyLine'
 
 export default {
   components: {
     ChinaMap,
     WorldMap,
-    MyList
+    MyList,
+    MyLine
   },
   data () {
     return {
