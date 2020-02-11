@@ -1,6 +1,11 @@
 # 2019-ncov
 2019武汉肺炎数据分析
 
+## 截图
+> 更多截图请见[截图列表](screenshots)
+
+![截图1](screenshots/1.png)
+
 ## client
 ### 安装与使用
 ```
