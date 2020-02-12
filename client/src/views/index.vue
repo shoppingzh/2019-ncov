@@ -25,7 +25,7 @@
           <div class="label">确诊</div>
         </van-col>
         <van-col span="6" class="summary">
-          <div v-if="data.add_daily" class="c-orange add animated fadeInUp delay-1s">+{{data.add_daily.addsus}}</div>
+          <div v-if="data.add_daily" class="c-orange add animated fadeInUp delay-1s">+{{data.add_daily.wjw_addsus}}</div>
           <div class="c-orange">{{ data.sustotal || '-' }}</div>
           <div class="label">疑似</div>
         </van-col>

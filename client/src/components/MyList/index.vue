@@ -11,7 +11,7 @@
       </van-row>
     </div>
     <div class="list__body">
-      <div v-for="(item, index) in data" :key="item.name">
+      <div v-for="(item, index) in sortedData" :key="item.name">
         <van-row
           type="flex"
           align="center"
@@ -70,6 +70,25 @@ export default {
         return this.data[0].city !== undefined
       }
       return false
+    },
+    sortedData () {
+      const data = this.data
+      if (!data || !data.length) {
+        return []
+      }
+      data.sort((a, b) => {
+        return parseInt(b.value) - parseInt(a.value)
+      })
+      data.forEach((obj) => {
+        if (obj.city && obj.city.length) {
+          obj.city.forEach((city) => {
+            obj.city.sort((a, b) => {
+              return parseInt(b.conNum) - parseInt(a.conNum)
+            })
+          })
+        }
+      })
+      return data
     }
   }
 }
